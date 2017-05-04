@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+<script type="text/javascript" src= "angular.min.js"></script>
+<script type="text/javascript" src="lesson1_t2.js"></script>  
+</head>
+
+<body ng-app="Gemstore" ng-controller="store_con as store">
+ <div >
+  <h1> {{store.product.name}} </h1>
+  <h2> ${{store.product.price}} </h2>
+  <p> {{store.product.description}} </p>
+ </div>
+{{store.product.name}}
+</body>
+
+
+  
+</html>

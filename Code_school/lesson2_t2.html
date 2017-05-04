@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+<script type="text/javascript" src= "angular.min.js"></script>
+<script type="text/javascript" src="lesson2_t2.js"></script>  
+</head>
+
+<body ng-app="Gemstore" ng-controller="store_con as store">
+ <div ng-hide="product.soldOut" ng-repeat="product in store.products">
+  <h1> {{product.name}} </h1>
+  <h2> {{product.price | currency}} </h2>
+  <p> {{product.description}} </p>
+  <button ng-show="product.canPurchase"> Add to Cart</button>
+  <img ng-src="{{product.images[0].full}}"/> 
+  <br><br>
+
+<section ng-controller="panel_con as panel"> 
+  <ul class="nav nav-pills">
+    <li ng-class="{active:panel.isSelected(1)}"> <a href ng-click="panel.selectTab(1)"> Description </a></li>
+	<li ng-class="{active:panel.isSelected(2)}"> <a href ng-click="panel.selectTab(2)"> Specification </a></li>
+	<li ng-class="{active:panel.isSelected(3)}"> <a href ng-click="panel.selectTab(3)"> Review </a></li>
+  </ul>
+  {{tab}}
+  <div class="panel" ng-show="panel.isSelected(1)">
+    <h4> Description </h4>
+    <p> {{product.description}} </p>
+  </div>
+  <div class="panel" ng-show="panel.isSelected(2)">
+    <h4> Specification </h4>
+    <blockquote> Not yet </blockquote>
+  </div>
+  <div class="panel" ng-show="panel.isSelected(3)">
+    <h4> Review </h4>
+    <blockquote> Not yet </blockquote>
+  </div>
+</section> 
+
+
+</div>
+
+ 
+</body>
+
+
+  
+</html>

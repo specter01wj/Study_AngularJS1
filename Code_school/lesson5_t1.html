@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="lesson4_t1.js"></script>
+	<script type="text/javascript" src="lesson4_t1_products.js"></script>
+  </head>
+  <body class="list-group" ng-controller="StoreController as store">
+    <header>
+      <h1 class="text-center">Flatlander Crafted Gems</h1>
+      <h2 class="text-center">– an Angular store –</h2>
+    </header>
+    <div class="list-group-item" ng-repeat="product in store.products">
+     <!-- <h3 ng-include="'lesson4_t1_product-title.html'"></h3> -->
+	 <!-- <product-title></product-title> -->
+	 <h3 product-title></h3>
+
+      <!-- Image Gallery  -->
+      <div class='gallery' ng-controller="GalleryController as gallery" ng-show="product.images.length">
+        <div class="img-wrap">
+        <img ng-src="{{product.images[gallery.current]}}" />
+        </div>  
+        <ul class="img-thumbnails clearfix">
+          <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+            <img ng-src="{{image}}" />
+          </li>
+        </ul>
+      </div>
+
+      <section class="tab" ng-controller="TabController as tab">
+        <ul class="nav nav-pills">
+          <li ng-class="{ active: tab.isSet(1) }">
+            <a href ng-click="tab.setTab(1)">Description</a></li>
+          <li ng-class="{ active: tab.isSet(2) }">
+            <a href ng-click="tab.setTab(2)">Specs</a></li>
+          <li ng-class="{ active: tab.isSet(3) }">
+            <a href ng-click="tab.setTab(3)">Reviews</a></li>
+        </ul>
+        <div ng-show="tab.isSet(1)">
+          <h4>Description</h4>
+          <blockquote>{{product.description}}</blockquote>
+        </div>
+        <div ng-show="tab.isSet(2)">
+          <h4>Specs</h4>
+          <blockquote>Shine: {{product.shine}}</blockquote>
+        </div>
+        <div ng-show="tab.isSet(3)">
+          <h4>Reviews</h4>
+		  <blockquote ng-repeat="review in product.reviews">
+		  
+		  <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+		    <blockquote>
+			  <b> Stars: {{reviewCtrl.review.stars}}</b>
+			  {{reviewCtrl.review.body}}
+			  <cite> by: {{reviewCtrl.review.author}}</cite>
+		    </blockquote>
+		    <select ng-model="reviewCtrl.review.stars" required>
+			  <option value="1"> 1 star </option>
+			  <option value="2"> 2 star </option>
+			  <option value="3"> 3 star </option>
+			  <option value="4"> 4 star </option>
+			  <option value="5"> 5 star </option>
+			</select>
+			<textarea ng-model="reviewCtrl.review.body" required></textarea>
+			<label>By:</label>
+			<input type="email" ng-model="reviewCtrl.review.author" required /><br>
+			<input type="checkbox" ng-model="reviewCtrl.review.terms" required /> I agree to the terms <br>
+			What color you like?
+			<input type="radio" ng-model="reviewCtrl.review.color" value="red" required /> Red
+			<input type="radio" ng-model="reviewCtrl.review.color" value="blue" required /> Blue
+			<input type="radio" ng-model="reviewCtrl.review.color" value="green" required /> Green
+			<input type="submit" value="Submit" />
+			<div> reviewForm is {{reviewForm.$valid}} </div>
+	      </form>
+		  </blockquote>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
