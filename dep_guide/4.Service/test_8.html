@@ -7,13 +7,14 @@
 	<script type="text/javascript" src="test_8_protractor.js"></script>
   </head>
   <body ng-app="myServiceModule">
+  
     <h1>{{"Hello, Angular!"}}</h1>
-	<div id="simple" ng-controller="MyController">
-  <p>Let's try this simple notify service, injected into the controller...</p>
-  <input ng-init="message='test'" ng-model="message" >
-  <button ng-click="callNotify(message);">NOTIFY</button>
-  <p>(you have to click 3 times to see an alert)</p>
-</div>
+  	<div id="simple" ng-controller="MyController">
+      <p>Let's try this simple notify service, injected into the controller...</p>
+      <input ng-init="message='test'" ng-model="message" >
+      <button ng-click="callNotify(message);">NOTIFY</button>
+      <p>(you have to click 3 times to see an alert)</p>
+    </div>
 
   </body>
 </html>
