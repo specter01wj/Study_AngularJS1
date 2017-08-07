@@ -1,5 +1,5 @@
-(function(){
-  var myApp = angular.module('spicyApp2', []);
+
+var myApp = angular.module('spicyApp2', []);
 
 myApp.controller('SpicyController', ['$scope', function($scope) {
     $scope.customSpice = "wasabi";
@@ -9,5 +9,3 @@ myApp.controller('SpicyController', ['$scope', function($scope) {
         $scope.spice = spice;
     };
 }]);
-
-})();

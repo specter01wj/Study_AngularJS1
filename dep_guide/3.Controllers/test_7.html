@@ -11,15 +11,15 @@
     <h1>{{"Hello, Angular!"}}</h1>
     <div class="spicy">
       <div ng-controller="MainController">
-      <p>Good {{timeOfDay}}, {{name}}!</p>
-
-      <div ng-controller="ChildController">
         <p>Good {{timeOfDay}}, {{name}}!</p>
 
-        <div ng-controller="GrandChildController">
+        <div ng-controller="ChildController">
           <p>Good {{timeOfDay}}, {{name}}!</p>
+
+          <div ng-controller="GrandChildController">
+            <p>Good {{timeOfDay}}, {{name}}!</p>
+          </div>
         </div>
-      </div>
       </div>
     </div>
 
