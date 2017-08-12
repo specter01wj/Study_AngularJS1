@@ -5,6 +5,7 @@
      notify(msg);
    };
  }]);
+ 
  app.factory('notify', ['$window', function(win) {
    var msgs = [];
    return function(msg) {
