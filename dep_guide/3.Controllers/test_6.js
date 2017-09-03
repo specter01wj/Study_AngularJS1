@@ -8,4 +8,5 @@ myApp.controller('SpicyController', ['$scope', function($scope) {
     $scope.spicy = function(spice) {
         $scope.spice = spice;
     };
+    
 }]);
