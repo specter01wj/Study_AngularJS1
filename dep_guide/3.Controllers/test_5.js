@@ -11,6 +11,7 @@ myApp.controller('SpicyController', ['$scope', function($scope) {
     $scope.jalapenoSpicy = function() {
         $scope.spice = 'jalapeño';
     };
+    
 }]);
 
 })();
