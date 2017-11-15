@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-    <script type="text/javascript" src="angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap.min.css" />
+    <script type="text/javascript" src="../libs/angular.min.js"></script>
     <script type="text/javascript" src="test_11.js"></script>
   </head>
   <body ng-app="eventExample">
     <h1>{{"JinWang, Angular!"}}</h1>
-	<div ng-controller="EventController">
-       Root scope <tt>MyEvent</tt> count: {{count}}
+	  <div ng-controller="EventController">
+       Root scope <tt>root</tt> count: {{count}}
        <ul>
          <li ng-repeat="i in [1,2,3]" ng-controller="EventController">
             <button ng-click="$emit('MyEvent')">$emit('MyEvent')</button>
             <button ng-click="$broadcast('MyEvent')">$broadcast('MyEvent')</button>
             <br>
-              Middle scope <tt>MyEvent</tt> count: {{count}}
+              Middle scope <tt>mid</tt> count: {{count}}
             <ul>
               <li ng-repeat="item in [1, 2]" ng-controller="EventController">
-                Leaf scope <tt>MyEvent</tt> count: {{count}}
+                Leaf scope <tt>leaf</tt> count: {{count}}
               </li>
             </ul>
          </li>

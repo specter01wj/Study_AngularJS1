@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html ng-app="scopeExample">
+<html>
   <head>
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-	<link  type="text/css" href="test_10.css" />
-    <script type="text/javascript" src="angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap.min.css" />
+	  <link rel="stylesheet" type="text/css" href="test_10.css" />
+    <script type="text/javascript" src="../libs/angular.min.js"></script>
     <script type="text/javascript" src="test_10.js"></script>
   </head>
-  <body >
-    <h1>{{"Hello, Angular!"}}</h1>
-	<div class="show-scope-demo">
+  <body ng-app="scopeExample">
+    <h1 class="app_header">{{"Hello, Angular!"}}</h1>
+	  <div class="show-scope-demo">
        <div ng-controller="GreetController">
             Hello {{name}}!
        </div>
