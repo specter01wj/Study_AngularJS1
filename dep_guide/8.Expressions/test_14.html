@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap.min.css" />
+    <script type="text/javascript" src="../libs/angular.min.js"></script>
+     <script type="text/javascript" src="test_14.js"></script>
+  </head>
+  <body ng-app="eventExample">
+    
+	<div class="example2" ng-controller="ExampleController">
+	  Name: <input ng-model="name" type="text"/>
+	  <button ng-click="greet()">Greet</button>
+	  <button ng-click="window.alert('Should not see me')">Won't greet</button>
+	</div>
+
+  </body>
+</html>
