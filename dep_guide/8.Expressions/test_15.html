@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap.min.css" />
+    <script type="text/javascript" src="../libs/angular.min.js"></script>
+     <script type="text/javascript" src="test_15.js"></script>
+  </head>
+  <body ng-app="eventExample">
+    
+	<div ng-controller="EventController">
+    <button ng-click="clickMe($event)">Event</button>
+    <p><code>$event</code>: <pre> {{$event | json}}</pre></p>
+    <p><code>clickEvent</code>: <pre>{{clickEvent | json}}</pre></p>
+  </div>
+
+  </body>
+</html>
