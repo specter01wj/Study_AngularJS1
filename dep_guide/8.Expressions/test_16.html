@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap.min.css" />
+    <script type="text/javascript" src="../libs/angular.min.js"></script>
+     <script type="text/javascript" src="test_16.js"></script>
+  </head>
+  <body ng-app="eventExample">
+    
+    <div ng-controller="EventController">
+      <button ng-click="clickMe($event)">Click Me</button>
+      <p id="one-time-binding-example">One time binding: {{::name}}</p>
+      <p id="normal-binding-example">Normal binding: {{name}}</p>
+    </div>
+
+  </body>
+</html>
