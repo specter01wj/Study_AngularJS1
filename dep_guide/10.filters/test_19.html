@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap.min.css" />
+    <script type="text/javascript" src="../libs/angular.min.js"></script>
+     <script type="text/javascript" src="test_19.js"></script>
+  </head>
+  <body ng-app="eventExample">
+    
+    <div ng-controller="MyController">
+      Input: <input ng-model="greeting" type="text"><br>
+      Decoration: <input ng-model="decoration.symbol" type="text"><br>
+      No filter: {{greeting}}<br>
+      Decorated: {{greeting | decorate}}<br>
+    </div>
+
+  </body>
+</html>
