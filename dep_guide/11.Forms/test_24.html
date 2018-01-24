@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap.min.css" />
+    <script type="text/javascript" src="../libs/angular.min.js"></script>
+     <script type="text/javascript" src="test_24.js"></script>
+  </head>
+  <body ng-app="debounceExample">
+    
+    <div ng-controller="ExampleController">
+
+      <div ng-controller="ExampleController">
+        <form>
+          <label>Name:
+          <input type="text" ng-model="user.name" ng-model-options="{ debounce: 250 }" /></label><br />
+        </form>
+        <pre>username = "{{user.name}}"</pre>
+      </div>
+
+  </body>
+</html>
