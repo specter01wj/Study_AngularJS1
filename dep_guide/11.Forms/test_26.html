@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap.min.css" />
+    <script type="text/javascript" src="../libs/angular.min.js"></script>
+     <script type="text/javascript" src="test_26.js"></script>
+  </head>
+  <body ng-app="form-example-modify-validators">
+    
+    <form name="form" class="css-form" novalidate>
+      <div>
+        <label>
+          Overwritten Email:
+          <input type="email" ng-model="myEmail" overwrite-email name="overwrittenEmail" />
+        </label>
+        <span ng-show="form.overwrittenEmail.$error.email">This email format is invalid!</span><br>
+        Model: {{myEmail}}
+      </div>
+    </form>
+
+    <style type="text/css">
+      .css-form input.ng-invalid.ng-touched {
+        background-color: #FA787E;
+      }
+
+      .css-form input.ng-valid.ng-touched {
+        background-color: #78FA89;
+      }
+    </style>
+
+  </body>
+</html>
