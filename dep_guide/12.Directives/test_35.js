@@ -9,7 +9,8 @@ angular.module('docsIsolationExample', [])
     return {
       restrict: 'E',
       scope: {
-        customerInfo: '=info'
+        customerInfo: '=info',
+        info2: '='
       },
       templateUrl: 'my-customer-plus-vojta.html'
     };
