@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-animate-ng-show-production</title>
+  <link href="animations.css" rel="stylesheet" type="text/css">
+  
+
+  <script src="../../libs/angular1610.min.js"></script>
+  <script src="../../libs/angular-animate.js"></script>
+  
+
+  
+</head>
+<body ng-app="ngAnimate">
+
+  <div ng-init="checked = true">
+    <label>
+      <input type="checkbox" ng-model="checked" />
+      Is visible
+    </label>
+    <div class="content-area sample-show-hide" ng-show="checked">
+      Content...
+    </div>
+  </div>
+  
+</body>
+</html>
+
+<!-- 
+Copyright 2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
