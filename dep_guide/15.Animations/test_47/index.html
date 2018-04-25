@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-animate-css-class-production</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  
+
+  <script src="../../libs/angular1610.min.js"></script>
+  <script src="../../libs/angular-animate.js"></script>
+  
+
+  
+</head>
+<body ng-app="ngAnimate">
+  <p>
+  <button ng-click="myCssVar='css-class'">Set</button>
+  <button ng-click="myCssVar=''">Clear</button>
+  <br>
+  <span ng-class="myCssVar">CSS-Animated Text</span>
+</p>
+</body>
+</html>
+
+<!-- 
+Copyright 2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
