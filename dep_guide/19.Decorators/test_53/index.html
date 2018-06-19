@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-filter-decorator-production</title>
+  
+
+  <script src="../../libs/angular1610.min.js"></script>
+  <script src="script.js"></script>
+  
+
+  
+</head>
+<body ng-app="filterDecorator">
+  <div ng-controller="Ctrl">
+  <div id="genesis">Initial Commit default to short date: {{ genesis | date }}</div>
+  <div>ng-conf 2016 default short date: {{ ngConf | date }}</div>
+  <div id="ngConf">ng-conf 2016 with full date format: {{ ngConf | date:'fullDate' }}</div>
+</div>
+</body>
+</html>
+
+<!-- 
+Copyright 2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
