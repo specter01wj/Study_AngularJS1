@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-accessibility-ng-click-production</title>
+  
+
+  <script src="../../libs/angular1610.min.js"></script>
+  <script src="../../libs/angular-aria.js"></script>
+  
+
+  
+</head>
+<body ng-app="ngAria_ngClickExample">
+   <div ng-click="someFunction" show-attrs>
+   &lt;div&gt; with ng-click and bindRoleForClick, tabindex set to false
+ </div>
+<script>
+ angular.module('ngAria_ngClickExample', ['ngAria'], function config($ariaProvider) {
+   $ariaProvider.config({
+     bindRoleForClick: true,
+     tabindex: true
+   });
+ })
+ .directive('showAttrs', function() {
+   return function(scope, el, attrs) {
+     var pre = document.createElement('pre');
+     el.after(pre);
+     scope.$watch(function() {
+       var attrs = {};
+       Array.prototype.slice.call(el[0].attributes, 0).forEach(function(item) {
+         if (item.name !== 'show-attrs') {
+           attrs[item.name] = item.value;
+         }
+       });
+       return attrs;
+     }, function(newAttrs, oldAttrs) {
+       pre.textContent = JSON.stringify(newAttrs, null, 2);
+     }, true);
+   }
+ });
+</script>
+</body>
+</html>
+
+<!-- 
+Copyright 2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
