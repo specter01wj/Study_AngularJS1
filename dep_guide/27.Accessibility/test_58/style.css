@@ -1,0 +1,23 @@
+custom-checkbox {
+  cursor: pointer;
+  display: inline-block;
+}
+
+custom-checkbox .icon:before {
+  content: '\2610';
+  display: inline-block;
+  font-size: 2em;
+  line-height: 1;
+  speak: none;
+  vertical-align: middle;
+}
+
+custom-checkbox.checked .icon:before {
+  content: '\2611';
+}
+
+/*
+Copyright 2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
